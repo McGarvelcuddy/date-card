@@ -1,0 +1,20 @@
+{
+  "name": "date-card",
+  "version": "0.0.0",
+  "description": "Webcomponent date-card following open-wc recommendations",
+  "author": "date-card",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "start": "es-dev-server --app-index demo/index.html --node-resolve --open --watch"
+  },
+  "dependencies": {
+    "lit-html": "^1.1.2",
+    "lit-element": "^2.2.1",
+    "@lrnwebcomponents/simple-colors": "^2.6.8"
+  },
+  "devDependencies": {
+    "es-dev-server": "^1.23.0"
+  }
+}
