@@ -1,10 +1,10 @@
 import { LitElement, html, css } from 'lit-element/lit-element.js';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 
-export class DateCard extends LitElement {
+export class DateCardDetails extends LitElement {
 
     static get tag() {
-        return 'date-card';
+        return 'date-card-details';
     }
 
     static get properties() {
@@ -12,6 +12,10 @@ export class DateCard extends LitElement {
             month: { type: String },
             date: { type: Number },
             day: { type: String },
+            title: { type: String },
+            startTime: { type: String },
+            endTime: { type: String },
+            location: { type: String },
             uniformPadding: { type: String, attribute: 'uniform-padding' },
         };
     }
@@ -21,6 +25,10 @@ export class DateCard extends LitElement {
         this.month = "May";
         this.date = 1;
         this.day = "Friday";
+        this.title = ""
+        this.startTime = "4 PM";
+        this.endTime = "5 PM";
+        this.location = "Cafe, Room 210 West";
     }
 
     static get styles() {
@@ -66,17 +74,16 @@ export class DateCard extends LitElement {
       <div class="card">
         <simple-colors dark>
           <div class="monthSection">
-            <p class="month" ><b>${this.month}</b></p>
+            <p class="month"><b>${this.month}</b></p>
           </div>
           <div class="dateSection">
             <p class="dateNumber">${this.date}</p>
             <p class="dayName">${this.day}</p>
           </div>
         </simple-colors>
-      </div>
+      </div><span class="title">Things and stuff</span>
     `;
     }
 }
-
-export default { DateCard };
-window.customElements.define(DateCard.tag, DateCard);
+export default { DateCardDetails };
+window.customElements.define(DateCardDetails.tag, DateCardDetails);
