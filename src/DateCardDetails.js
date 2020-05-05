@@ -1,6 +1,20 @@
 import { LitElement, html, css } from 'lit-element/lit-element.js';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 
+const nth = function(d) {
+    if (d > 3 && d < 21) return 'th';
+    switch (d % 10) {
+        case 1:
+            return "st";
+        case 2:
+            return "nd";
+        case 3:
+            return "rd";
+        default:
+            return "th";
+    }
+}
+
 export class DateCardDetails extends LitElement {
 
     static get tag() {
@@ -25,11 +39,13 @@ export class DateCardDetails extends LitElement {
         this.month = "May";
         this.date = 1;
         this.day = "Friday";
-        this.title = ""
+        this.title = "Things and Stuff";
         this.startTime = "4 PM";
         this.endTime = "5 PM";
         this.location = "Cafe, Room 210 West";
     }
+
+
 
     static get styles() {
         return css `
@@ -66,6 +82,30 @@ export class DateCardDetails extends LitElement {
         border: 1px solid var(--simple-colors-default-theme-blue-2);
         border-radius: 10px 10px 0px 0px;
       }
+      .details {
+          border-layout: square;
+          border: 1px solid;
+          margin: 5px;
+          padding: 4px;
+      }
+      .title, .time, .location {
+        vertical-align: middle;
+        font-family: roboto;
+        line-height: 16px;
+        margin-bottom: 8px !important;
+      }
+      .title {
+          font-size: 22px;
+          color: var(--simple-colors-default-theme-blue-5);
+      }
+      .time {
+          font-size: 18px;
+          color: var(--simple-colors-default-theme-grey-7);
+      }
+      .location {
+          font-size: 18px;
+          color: var(--simple-colors-default-theme-grey-8);
+      }
     `;
     }
 
@@ -81,7 +121,11 @@ export class DateCardDetails extends LitElement {
             <p class="dayName">${this.day}</p>
           </div>
         </simple-colors>
-      </div><span class="title">Things and stuff</span>
+      </div><span class="details">
+        <p class="title">${this.title}</p>
+        <p class="time">${this.day} ${this.month} ${this.date}<sup>${nth(this.date)}</sup>, ${this.startTime} - ${this.endTime}</p>
+        <p class="location">${this.location}</p>
+      </span>
     `;
     }
 }
