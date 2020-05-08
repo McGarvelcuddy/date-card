@@ -9,10 +9,16 @@
         }
     </style>
 </head>
+<!-- Recommended fields: month="" date="" day="" -->
+<!-- Optional fields requiring title field in order to display adjacent details block: title="" startTime="" endTime="" location=""-->
+<!-- Optional setting: borderSpacing="" -->
 
 <body>
-    <date-card month="August" date=1 day="Friday"></date-card>
-    <date-card-details month="August" date=4 day="Friday"></date-card-details>
+    <date-card month="August" date=2 day="Wednesday"></date-card><br>
+    <date-card month="August" date=4 day="Friday" title="IST Ice Cream Social" startTime="4PM" endTime="6PM" location="West Dining Commons"></date-card><br>
+    <date-card month="August" date=4 day="Friday" title="IST Ice Cream Social" startTime="4PM" endTime="6PM"></date-card><br>
+    <date-card month="August" date=4 day="Friday" title="IST Ice Cream Social" startTime="4PM" location="West Dining Commons"></date-card><br>
+    <date-card month="August" date=4 day="Friday" title="IST Ice Cream Social" endTime="6PM" location="West Dining Commons" borderSpacing=100></date-card>
 
     <script type="module">
         import { html, render} from 'lit-html'; import '../index.js';
