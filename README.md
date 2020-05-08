@@ -15,6 +15,19 @@ npm i date-card
 
 <date-card></date-card>
 ```
+### Recommended fields: 
+ - month="" 
+ - date="" 
+ - day=""
+
+### Optional fields requiring 'title' field in order to display adjacent details block: 
+ - title="" 
+ - startTime="" 
+ - endTime="" 
+ - location=""
+
+### Optional setting: 
+ - borderSpacing="" (default is 10)
 
 
 
