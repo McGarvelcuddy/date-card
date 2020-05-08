@@ -40,7 +40,6 @@ export class DateCard extends LitElement {
         super();
         this.month = 'specify month=';
         this.date = 'specify date=';
-        this.day = "specify day=";
         this.borderSpacing = 5;
     }
 
@@ -122,13 +121,13 @@ export class DateCard extends LitElement {
           </div>
           <div class="dateSection">
             <p class="dateNumber">${this.date}<sup>${nth(this.date)}</sup></p>
-            <p class="dayName">${this.day}</p>
+            ${this.day ? html`<p class="dayName">${this.day}</p>` : html``}
           </div>
         </simple-colors>
       </div>${this.title ? html`
         <span class="details" style="margin:${this.borderSpacing}px;">
           <p class="title">${this.title}</p>
-          <p class="time">${this.day}, ${this.month} ${this.date}${nth(this.date)} ${this.startTime ? html`${this.endTime ? html`from ${this.startTime} - ${this.endTime}</p>`: html`at ${this.startTime}</p>`}` : html`</p>`}
+          <p class="time">${this.day ? html`${this.day}, `: html``}${this.month} ${this.date}${nth(this.date)} ${this.startTime ? html`${this.endTime ? html`from ${this.startTime} - ${this.endTime}</p>`: html`at ${this.startTime}</p>`}` : html`</p>`}
           ${this.location ? html`<p class="location">${this.location}</p></span>`: html`</span>`}` : html``}`;
     }
 }
