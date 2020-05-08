@@ -1,0 +1,40 @@
+{
+    "canScale": true,
+    "canPosition": true,
+    "canEditSource": false,
+    "gizmo": {
+        "title": "date-card",
+        "description": "Displays a calendar date icon with potential details",
+        "icon": "icons:android",
+        "color": "green",
+        "groups": [
+            "Hax"
+        ],
+        "handles": [{
+            "type": "todo:read-the-docs-for-usage"
+        }],
+        "meta": {
+            "author": "Reed",
+            "owner": "lrnwebcomponents"
+        }
+    },
+    "settings": {
+        "quick": [],
+        "configure": [{
+                "property": "title",
+                "description": "",
+                "inputMethod": "textfield",
+                "required": false,
+                "icon": "icons:android"
+            },
+            {
+                "property": "available",
+                "description": "",
+                "inputMethod": "boolean",
+                "required": false,
+                "icon": "icons:android"
+            }
+        ],
+        "advanced": []
+    }
+}

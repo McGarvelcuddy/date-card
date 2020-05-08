@@ -1,3 +1,3 @@
-import { DateCard } from './src/DateCard.js';
+import { DateCard } from './src/date-card.js';
 
-window.customElements.define('date-card', DateCard);
+window.customElements.define('date-card', date - card);

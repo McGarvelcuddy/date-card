@@ -1,2 +1,2 @@
 export { DateCard }
-from './src/DateCard.js';
+from './src/date-card.js';

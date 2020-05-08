@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit-element/lit-element.js';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
+//import { HAXWiring } from "@lrnwebcomponents/hax-body-behaviors/lib/HAXWiring.js";
+
 
 const nth = function(d) {
     if (d > 3 && d < 21) return 'th';
