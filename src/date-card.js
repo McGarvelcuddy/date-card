@@ -90,6 +90,7 @@ export class DateCard extends SimpleColors {
           border-layout: square;
           border: 2px solid var(--simple-colors-default-theme-accent-2);
           padding: 4px;
+          background: var(--simple-colors-default-theme-accent-2);
       }
       .title, .time, .location {
         vertical-align: middle;
@@ -116,7 +117,6 @@ export class DateCard extends SimpleColors {
     render() {
             return html `
       <div class="card" style="margin:${this.borderSpacing}px;">
-        <simple-colors dark>
           <div class="monthSection">
             <p class="month"><b>${this.month}</b></p>
           </div>
@@ -124,7 +124,6 @@ export class DateCard extends SimpleColors {
             <p class="dateNumber">${this.date}<sup>${nth(this.date)}</sup></p>
             ${this.day ? html`<p class="dayName">${this.day}</p>` : html``}
           </div>
-        </simple-colors>
       </div>${this.title ? html`
         <span class="details" style="margin:${this.borderSpacing}px;">
           <p class="title">${this.title}</p>
