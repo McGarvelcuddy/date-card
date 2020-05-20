@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'lit-element/lit-element.js';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
-//import { HAXWiring } from "@lrnwebcomponents/hax-body-behaviors/lib/HAXWiring.js";
 
 
 const nth = function(d) {
@@ -17,7 +16,7 @@ const nth = function(d) {
     }
 }
 
-export class DateCard extends LitElement {
+export class DateCard extends SimpleColors {
 
     static get tag() {
         return 'date-card';
@@ -46,7 +45,9 @@ export class DateCard extends LitElement {
 
 
     static get styles() {
-        return css `
+        return [
+            ...super.styles,
+            css `
       :host {
         display: inline-flex;
       }
@@ -54,7 +55,6 @@ export class DateCard extends LitElement {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         width: var(--date-card-card-width, 100px);
         border-radius: 10px;
-
       }
       .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -82,13 +82,13 @@ export class DateCard extends LitElement {
         text-transform: uppercase;
       }
       .monthSection {
-        background-color: var(--simple-colors-default-theme-blue-5);
-        border: 1px solid var(--simple-colors-default-theme-blue-2);
+        background-color: var(--simple-colors-default-theme-accent-5);
+        border: 1px solid var(--simple-colors-default-theme-accent-2);
         border-radius: 10px 10px 0px 0px;
       }
       .details {
           border-layout: square;
-          border: 2px solid var(--simple-colors-default-theme-blue-2);
+          border: 2px solid var(--simple-colors-default-theme-accent-2);
           padding: 4px;
       }
       .title, .time, .location {
@@ -99,17 +99,18 @@ export class DateCard extends LitElement {
       }
       .title {
           font-size: 22px;
-          color: var(--simple-colors-default-theme-blue-5);
+          color: var(--simple-colors-default-theme-accent-5);
       }
       .time {
           font-size: 18px;
-          color: var(--simple-colors-default-theme-grey-7);
+          color: var(--simple-colors-default-theme-accent-7);
       }
       .location {
           font-size: 18px;
-          color: var(--simple-colors-default-theme-grey-8);
+          color: var(--simple-colors-default-theme-accent-8);
       }
-    `;
+    `
+        ];
     }
 
     render() {
